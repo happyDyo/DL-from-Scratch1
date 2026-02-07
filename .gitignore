@@ -1,3 +1,6 @@
 .venv/
 __pycache__/
 TempCodeRunnerFile.py
+
+dataset/*.pkl
+dataset/*.gz
