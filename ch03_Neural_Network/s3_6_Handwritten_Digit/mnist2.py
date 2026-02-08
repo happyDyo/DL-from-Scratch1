@@ -14,7 +14,7 @@ label = t_train[0]
 print(label)
 
 print(img.shape)
-img = img.reshape(28, 28)
+img = img.reshape(28, 28)   # flatten 재배열
 print(img.shape)
 
 img_show(img)
