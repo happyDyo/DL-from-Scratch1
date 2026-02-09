@@ -1,3 +1,5 @@
+# 3.6.1 MNIST 데이터셋
+
 from dataset.mnist import load_mnist
 import numpy as np
 from PIL import Image
