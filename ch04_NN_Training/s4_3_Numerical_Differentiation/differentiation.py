@@ -1,7 +1,7 @@
 # 4.3.1 미분
 
 # 나쁜 구현 예시
-def numerical_diff(f, x) :
+def numerical_diff_x(f, x) :
     h = 1e-50
     return (f(x+h) - f(x)) / h
 
