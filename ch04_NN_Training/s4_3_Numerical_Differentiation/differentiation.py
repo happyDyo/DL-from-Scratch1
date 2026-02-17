@@ -8,4 +8,4 @@ def numerical_diff_x(f, x) :
 # 개선 예시
 def numerical_diff(f, x) :
     h = 1e-4            # 반올림 오차 개선, 보편적으로 1e-4 정도의 값이 좋은 결과를 얻는다고 알려져있음.
-    return (f(x+h) - f(x-h)) / h    # 중심 차분 혹은 중앙 차분을 통해 오차 줄이자.
+    return (f(x+h) - f(x-h)) / (2 * h)    # 중심 차분 혹은 중앙 차분을 통해 오차 줄이자.
