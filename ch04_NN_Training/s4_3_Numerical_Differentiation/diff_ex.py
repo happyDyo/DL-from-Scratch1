@@ -17,5 +17,20 @@ if __name__ == "__main__" :
     plt.plot(x, y)
     plt.show()
 
-    print(f"5에서의 미분값 : {numerical_diff(function_1, 5)}")
-    print(f"10에서의 미분값 : {numerical_diff(function_1, 10)}")
+    m5 = numerical_diff(function_1, 5)
+    print(f"5에서의 미분값 : {m5}")
+    y5 = m5 * x + function_1(5) - 5 * m5
+    plt.xlabel("x")
+    plt.ylabel("f(x)")
+    plt.plot(x, y)
+    plt.plot(x, y5)
+    plt.show()
+
+    m10 = numerical_diff(function_1, 10)
+    print(f"10에서의 미분값 : {m10}")
+    y10 = m10 * x + function_1(10) - 10 * m10
+    plt.xlabel("x")
+    plt.ylabel("f(x)")
+    plt.plot(x, y)
+    plt.plot(x, y10)
+    plt.show()
