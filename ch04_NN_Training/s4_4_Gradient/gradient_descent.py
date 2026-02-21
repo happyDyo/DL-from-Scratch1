@@ -9,5 +9,8 @@ def gradient_descent(f, init_x, lr=0.01, step_num = 100) :
     for i in range(step_num) :
         grad = numerical_gradient(f, x)
         x -= lr * grad
+        if i % 10.0 == 0 :
+            print(f"진행률 : {i} %")
+            print(f"현재 좌표 : {x}")
     
     return x
