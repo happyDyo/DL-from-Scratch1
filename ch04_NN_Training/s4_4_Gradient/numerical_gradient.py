@@ -1,4 +1,4 @@
-# 4.4 기울기
+# 4.4.0 기울기
 
 from ch04_NN_Training.s4_3_Numerical_Differentiation.partial_diff import function
 import numpy as np
