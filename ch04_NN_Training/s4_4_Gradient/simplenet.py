@@ -36,8 +36,10 @@ if __name__ == "__main__" :
     print(f"손실함수 값 : {net.loss(x, t)}\n")
 
 
-    def f(W) :
-        return net.loss(x, t)
+    # def f(W) :
+    #     return net.loss(x, t)
+
+    f = lambda w : net.loss(x, t)
     
     dW = numerical_gradient(f, net.W)
     print(f"dw 값 :")
