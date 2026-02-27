@@ -1,3 +1,5 @@
+# 4.5.1 2층 신경망 클래스 구현하기
+
 from common.functions import *
 from common.gradient import numerical_gradient
 
@@ -27,7 +29,7 @@ class TwoLayerNet :
     def loss(self, x, t) :
         y = self.predict(x)
 
-        cross_entropy_error(y, t)
+        return cross_entropy_error(y, t)
 
     def accuracy(self, x, t) :
         y = self.predict(x)
