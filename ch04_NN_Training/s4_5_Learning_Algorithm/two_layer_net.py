@@ -15,6 +15,7 @@ class TwoLayerNet :
                             np.random.randn(hidden_size, output_size)
         self.params['b2'] = np.zeros(output_size)
 
+
     def predict(self, x) :
         W1, W2 = self.params['W1'], self.params['W2']
         b1, b2 = self.params['b1'], self.params['b2']
@@ -26,10 +27,12 @@ class TwoLayerNet :
 
         return y
     
+
     def loss(self, x, t) :
         y = self.predict(x)
 
         return cross_entropy_error(y, t)
+
 
     def accuracy(self, x, t) :
         y = self.predict(x)
@@ -39,6 +42,7 @@ class TwoLayerNet :
         accuracy = np.sum(y == t) / float(x.shape[0])
 
         return accuracy
+    
     
     def numerical_gradient(self, x, t) :
         loss_W = lambda W : self.loss(x, t)
