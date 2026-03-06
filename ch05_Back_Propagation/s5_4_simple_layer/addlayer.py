@@ -1,4 +1,4 @@
-# 덧셈 계층
+# 5.4.2 덧셈 계층
 from ch05_Back_Propagation.s5_4_simple_layer.mullayer import MulLayer
 
 

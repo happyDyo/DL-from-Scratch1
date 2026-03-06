@@ -1,4 +1,4 @@
-# 5.4.2 곱셈 계층
+# 5.4.1 곱셈 계층
 
 class MulLayer :
     def __init__(self) :
