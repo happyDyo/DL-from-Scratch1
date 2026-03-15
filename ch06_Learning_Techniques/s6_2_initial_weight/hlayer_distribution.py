@@ -14,7 +14,10 @@ activations = {}                    # 이곳에 활성화 결과(활성화값)�
 for i in range(hidden_layer_size) :
     if i != 0 :
         x = activations[i-1]
-    w = np.random.randn(node_num, node_num) * 0.25
+
+    # w = np.random.randn(node_num, node_num) * 0.25
+    w = np.random.randn(node_num, node_num) / np.sqrt(node_num)     # Xavier 초깃값 구현
+    
     a = np.dot(x, w)
     z = sigmoid(a)
     activations[i] = z
