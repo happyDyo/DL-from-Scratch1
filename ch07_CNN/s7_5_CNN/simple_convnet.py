@@ -13,4 +13,6 @@ class SimpleConvNet :
         filter_stride = conv_param['stride']
         input_size = input_dim[1]
         conv_output_size = (input_size - filter_size + 2*filter_pad) / filter_stride + 1
+
+        # 기본적으로 stride = 2 가정 하에 세운 공식
         pool_output_size = int(filter_num * (conv_output_size/2) * (conv_output_size/2))
