@@ -48,3 +48,13 @@ class SimpleConvNet :
         self.layers['Affine2'] = Affine(self.params['W3'],
                                         self.params['b3'])
         self.last_layer = SoftmaxWithLoss()
+
+    
+    def predict(self, x) :
+        for layer in self.layers.values() :
+            x = layer.forward(x)
+        return x
+    
+    def loss(self, x, t) :
+        y = self.predict(x)
+        return self.last_layer.forward(y, t)
