@@ -1,8 +1,6 @@
 # 7.5 CNN 구현하기
 
-from ch07_CNN.s7_4_convpool_layer.convolution import Convolution
-from ch07_CNN.s7_4_convpool_layer.pooling import Pooling
-from common.layers import Relu, Affine, SoftmaxWithLoss
+from common.layers import Relu, Affine, SoftmaxWithLoss, Convolution, Pooling
 from collections import OrderedDict
 import numpy as np
 
@@ -58,3 +56,28 @@ class SimpleConvNet :
     def loss(self, x, t) :
         y = self.predict(x)
         return self.last_layer.forward(y, t)
+    
+
+    def gradient(self, x, t) :
+        # 순전파
+        self.loss(x, t)
+
+        # 역전파
+        dout = 1
+        dout = self.last_layer.backward(dout)
+
+        layers = list(self.layers.values())
+        layers.reverse()
+        for layer in layers :
+            dout = layer.backward(dout)
+
+        # 결과 저장
+        grads = {}
+        grads['W1'] = self.layers['Conv1'].dW
+        grads['b1'] = self.layers['Conv1'].db
+        grads['W2'] = self.layers['Affine1'].dW
+        grads['b2'] = self.layers['Affine1'].db
+        grads['W3'] = self.layers['Affine2'].dW
+        grads['b3'] = self.layers['Affine2'].db
+
+        return grads
